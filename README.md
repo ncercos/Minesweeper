@@ -3,7 +3,7 @@
 </p>
 
 
-Dive into the classic fun of Minesweeper, crafted from scratch in Java! Using the Swing library, this game brings a vibrant, interactive twist to your screen. With each click, discover hidden cells rendered with JButtons, all while strategically avoiding concealed mines. Can you clear the board and avoid the explosive surprises lurking beneath the surface? Test your wit and reflexes in this engaging Java-powered challenge!
+Dive into the classic fun of Minesweeper, crafted from scratch in Java! Using the Swing library, this game brings a vibrant, interactive twist to your screen. With each click, discover hidden cells rendered with JButtons, all while strategically avoiding concealed mines. Can you clear the board and avoid the explosive surprises lurking beneath the surface? Test your wit and reflexes in this engaging challenge!
 
 
 
