@@ -2,12 +2,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- *
- * @author Nicholas Cercos
- * Video Link: https://youtu.be/deQg4iv0wBo
- * My Full Code: https://www.dropbox.com/s/k3rqk2yf21f7e74/Minesweeper.zip?dl=0
- *
+/*
+ * Written by Nicholas Cercos
  */
 public class Grid {
 
@@ -16,16 +12,6 @@ public class Grid {
 	private final int numRows;
 	private final int numColumns;
 	private final int numBombs;
-
-	// Constructors
-
-	public Grid() {
-		this(10, 10, 25);
-	}
-
-	public Grid(int numRows, int numColumns) {
-		this(numRows, numColumns, 25);
-	}
 
 	public Grid(int numRows, int numColumns, int numBombs) {
 		this.bombGrid = new boolean[numRows][numColumns];
@@ -42,8 +28,8 @@ public class Grid {
 	 */
 	public void createBombGrid() {
 		List<Boolean> bombs = new ArrayList<>();
-		for(int i = 0; i < numBombs; i++)bombs.add(true);
-		for(int i = 0; i < (numRows * numColumns) - numBombs; i++)bombs.add(false);
+		for(int i = 0; i < numBombs; i++) bombs.add(true);
+		for(int i = 0; i < (numRows * numColumns) - numBombs; i++) bombs.add(false);
 		Collections.shuffle(bombs);
 
 		int index = 0;
@@ -56,18 +42,17 @@ public class Grid {
 	}
 
 	/**
-	 * Determines all cells proximity to a bomb.
+	 * Determines all cells' proximity to a bomb.
 	 */
 	public void createCountGrid() {
 		for(int row = 0; row < bombGrid.length; row++) {
-			for(int col = 0; col < bombGrid[row].length; col++) {
+			for(int col = 0; col < bombGrid[row].length; col++)
 				countGrid[row][col] = getCountAtLocation(row, col);
-			}
 		}
 	}
 
 	/**
-	 * Obtain a specific proximity count for a cell.
+	 * Get a specific proximity count for a cell.
 	 *
 	 * @param row    The row of the cell.
 	 * @param column The column of the cell.
@@ -132,37 +117,32 @@ public class Grid {
 		return bombGrid[row][column];
 	}
 
-	// Getters
-
-	public int getNumRows() {
-		return numRows;
-	}
-
-	public int getNumColumns() {
-		return numColumns;
-	}
-
-	public int getNumBombs() {
-		return numBombs;
-	}
-
+	/**
+	 * Returns a copy of the bomb grid, representing the placement of bombs
+	 * in the grid. Each cell in the returned array is true if there is a bomb
+	 * in that location, and false otherwise.
+	 *
+	 * @return A 2D boolean array representing the locations of bombs in the grid.
+	 */
 	public boolean[][] getBombGrid() {
 		boolean[][] bombGridCopy = new boolean[numRows][numColumns];
-		for(int row = 0; row < bombGridCopy.length; row++) {
-			for(int col = 0; col < bombGridCopy[row].length; col++) {
-				bombGridCopy[row][col] = bombGrid[row][col];
-			}
-		}
+		for(int row = 0; row < bombGridCopy.length; row++)
+			System.arraycopy(bombGrid[row], 0, bombGridCopy[row], 0, bombGridCopy[row].length);
 		return bombGridCopy;
 	}
 
+	/**
+	 * Returns a copy of the count grid, representing the proximity counts of each cell
+	 * in the grid to the bombs. Each value in the array indicates the number of bombs
+	 * adjacent to or within the specified cell.
+	 *
+	 * @return A 2D array of integers where each value represents the proximity count
+	 *         of a cell in the grid.
+	 */
 	public int[][] getCountGrid() {
 		int[][] countGridCopy = new int[numRows][numColumns];
-		for(int row = 0; row < countGridCopy.length; row++) {
-			for(int col = 0; col < countGridCopy[row].length; col++) {
-				countGridCopy[row][col] = countGrid[row][col];
-			}
-		}
+		for(int row = 0; row < countGridCopy.length; row++)
+			System.arraycopy(countGrid[row], 0, countGridCopy[row], 0, countGridCopy[row].length);
 		return countGridCopy;
 	}
 }

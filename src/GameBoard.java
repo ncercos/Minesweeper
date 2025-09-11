@@ -1,13 +1,13 @@
 import javax.swing.*;
 
-/**
- *
- * @author Nicholas Cercos
- *
+/*
+ * Written by Nicholas Cercos
  */
-public interface GameBoardInterface {
+public interface GameBoard {
+
 	void populateBoard();
 	boolean cellClicked(JButton button, int row, int col);
 	void bombFound();
 	void checkForWin();
+
 }
