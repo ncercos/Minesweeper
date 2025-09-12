@@ -24,7 +24,7 @@ Dive into the classic fun of **[Minesweeper](https://youtu.be/deQg4iv0wBo?si=A2U
 
 ### 1. Dynamic Game Board Generation
 
-Customizable board size and bomb count through interactive player input. The game adapts to player preferences for difficulty.
+Customizable board size and bomb count through interactive player input. The game adapts to player preferences for difficulty.  
 &nbsp;
 
 **How it works**: When initializing, the game prompts for board dimensions and bomb count.
@@ -49,7 +49,7 @@ private static String promptPlayerInput(String message) {
 
 ### 2. Intelligent Cell Revealing System
 
-Smart cell revealing mechanism that automatically expands empty regions when clicked.
+Smart cell revealing mechanism that automatically expands empty regions when clicked.  
 &nbsp;
 
 **How it works**: When a cell with no adjacent bombs is clicked, it recursively reveals neighboring cells.
@@ -85,7 +85,7 @@ private void showAdjacentCells(int row, int col) {
 
 ### 3. Color-Coded Proximity Indicators
 
-Visual feedback system using different colors to indicate the number of adjacent bombs.
+Visual feedback system using different colors to indicate the number of adjacent bombs.  
 &nbsp;
 
 **How it works**: Each cell is assigned a color based on its proximity to bombs.
@@ -106,7 +106,7 @@ private Color getTileColor(int num) {
 
 ### 4. Random Bomb Placement
 
-Simple but effective system for randomly distributing bombs across the game board while ensuring fair gameplay.
+Simple but effective system for randomly distributing bombs across the game board while ensuring fair gameplay.  
 &nbsp;
 
 **How it works**: Shuffles a list of bomb and empty cell markers before mapping them to the game grid.
