@@ -20,6 +20,7 @@ Dive into the classic fun of **[Minesweeper](https://youtu.be/deQg4iv0wBo?si=A2U
 - `Left Mouse Button` - Reveal cell
 - `Input Dialog` - Set custom board size and bomb count at startup
 - `Yes/No Dialog` - Choose to play again after game ends  
+
 _Tip: Look for patterns! When a cell shows '0', it means there are no bombs in any of the adjacent cells, and they will be automatically revealed for you._  
 &nbsp;
 
